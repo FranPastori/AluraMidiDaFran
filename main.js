@@ -12,7 +12,7 @@ while (contador< listaTeclas.length) {
     const instrumento = tecla.classList[1];
     const idAudio = ` #som_${instrumento}`;
     console.log(idAudio);
-    tecla.onclick = function () { tocaSom(idAudio);}
+    tecla.onclick = function () { tocaSom();}
 
     contador++;
 
