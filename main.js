@@ -19,12 +19,18 @@ var contador = 0
 //}
 
 for (let i = 0; i < listaTeclas.length; i++) {
-    const botao = listaTeclas[i];
-    const instrumento = botao.classList[1];
-    console.log(botao);
+    const tecla = listaTeclas[i];
+    const instrumento = tecla.classList[1];
+    console.log(tecla);
     console.log(instrumento);
     const idAudio = `#som_${instrumento}`;
     console.log(idAudio);
-    botao.onclick = function () { tocaSom(idAudio); }
-
-}
+    tecla.onclick = function () { tocaSom(idAudio); }
+    tecla.onkeydown=function(evento){
+        if (evento.code === 'Space'|| evento.code ==='Enter'){
+            tecla.classList.add('ativa');
+        }
+    }
+    tecla.onkeyup = function() {
+            tecla.classList.remove('ativa');}
+    }
